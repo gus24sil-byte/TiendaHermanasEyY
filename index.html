@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda Hermanas E&Y</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo-container">
+        <div class="logo-icon">🍎</div>
+
+        <div>
+            <h1>Tienda Hermanas E&Y</h1>
+            <p>Frescura que llega a tu mesa</p>
+        </div>
+    </div>
+
+    <button class="cart-button" onclick="abrirCarrito()">
+        🛒
+        <span>Carrito</span>
+        <b id="contadorCarrito">0</b>
+    </button>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">🍓 PRODUCTOS FRESCOS</span>
+
+        <h2>
+            Del campo<br>
+            a tu mesa
+        </h2>
+
+        <p>
+            Elegí tus frutas y verduras favoritas,
+            armá tu pedido y recibilo fácilmente.
+        </p>
+
+        <a href="#productos" class="hero-button">
+            🛍️ Comprar ahora
+        </a>
+
+    </div>
+
+    <div class="hero-fruits">
+        🍊 🍎 🥑
+        <br>
+        🥕 🍅 🍌
+    </div>
+
+</section>
+
+
+<section class="categorias">
+
+    <button onclick="filtrarProductos('todos')" class="categoria activa">
+        🛒 Todos
+    </button>
+
+    <button onclick="filtrarProductos('frutas')" class="categoria">
+        🍎 Frutas
+    </button>
+
+    <button onclick="filtrarProductos('verduras')" class="categoria">
+        🥬 Verduras
+    </button>
+
+</section>
+
+
+<main id="productos">
+
+    <div class="section-title">
+        <h2>Nuestros productos</h2>
+        <p>Seleccioná lo que quieras agregar a tu pedido</p>
+    </div>
+
+    <div id="catalogo" class="productos-grid"></div>
+
+</main>
+
+
+<!-- CARRITO -->
+
+<div id="carritoModal" class="modal">
+
+    <div class="carrito">
+
+        <div class="carrito-header">
+
+            <h2>🛒 Tu pedido</h2>
+
+            <button onclick="cerrarCarrito()" class="cerrar">
+                ×
+            </button>
+
+        </div>
+
+        <div id="itemsCarrito"></div>
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <strong id="totalCarrito">
+                $0
+            </strong>
+
+        </div>
+
+
+        <div class="datos-cliente">
+
+            <h3>📋 Datos para entregar</h3>
+
+            <input
+                type="text"
+                id="nombreCliente"
+                placeholder="Tu nombre"
+            >
+
+            <input
+                type="tel"
+                id="telefonoCliente"
+                placeholder="Tu teléfono"
+            >
+
+            <input
+                type="text"
+                id="direccionCliente"
+                placeholder="Dirección de entrega"
+            >
+
+            <textarea
+                id="observaciones"
+                placeholder="Observaciones del pedido"
+            ></textarea>
+
+        </div>
+
+
+        <button
+            onclick="enviarWhatsApp()"
+            class="whatsapp-button"
+        >
+            📲 Enviar pedido por WhatsApp
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🍎 Tienda Hermanas E&Y
+    </div>
+
+    <p>
+        Frutas • Verduras • Frescura • Calidad
+    </p>
+
+    <p class="copyright">
+        © 2026 Tienda Hermanas E&Y
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
